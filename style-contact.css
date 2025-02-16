@@ -1,0 +1,279 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: "Jost", serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 10%;
+}
+
+.logo img{
+    max-width: 100px;
+    height: auto;
+}
+
+.navmenu{
+    display: flex;
+}
+
+.navmenu a{
+    color: #000;
+    font-size:18px;
+    text-transform: capitalize;
+    padding: 10px 20px;
+    font-weight: 500;
+    transition: all .42s ease;
+}
+
+.navmenu a:hover{
+    color: crimson;
+    border: 2px solid black;
+    border-radius: 50px;
+    transition: all .42s ease;
+}
+
+.nav-icon{
+    display: flex;
+    align-items: center;
+}
+
+.nav-icon i{
+    margin-right: 20px;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 400;
+    transition: all .42s ease;
+}
+
+.nav-icon i:hover{
+    transform: scale(1.1);
+    color: crimson;
+}
+
+#menu-icon{
+    font-size: 35px;
+    color: #fff;
+    z-index: 10001;
+    cursor: pointer;
+}
+
+.container{
+    min-height: 100vh;
+    width: 100%;
+    background-color: #fff;
+}
+
+.service-wrapper{
+    padding: 7% 8%;
+}
+
+.service{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1{
+    color: #fff;
+    font-size: 5rem;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: transparent;
+    letter-spacing: 4px;
+    background-color: rgb(4, 52, 83);
+    background: linear-gradient(8deg, rgb(11, 66, 105) 0%,rgb(136, 136, 136) 41%,rgb(247, 246, 247) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+}
+
+
+h1:after{
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 10%;
+    height: 8px;
+    width: 80%;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+h1 span{
+    position: absolute;
+    top: 100%;
+    left: 10%;
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    background-color: rgb(239, 78, 105);
+    animation: anim 5s linear infinite;
+}
+
+@keyframes anim{
+    95%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        left: 90%;
+    }
+}
+
+.cards{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 30px;
+    margin-top: 80px;
+}
+
+.card{
+    height: 350px;
+    width: 370px;
+    background-color: #fff;
+    padding: 3% 8%;
+    border: 0.2px solid black;
+    border-radius: 8px;
+    transition: .6s;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:after{
+    content: "";
+    position: absolute;
+    top: 150%;
+    left: -200px;
+    width: 120px;
+    transform: rotate(50deg);
+    background-color: #ffe6ee;
+    height: 18px;
+    filter: blur(30px);
+    opacity: 0.5;
+    transition: 1s;
+}
+
+.card:hover:after{
+    width: 225%;
+    top: -100%;
+}
+
+.card i{
+    color: #000;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 4.8rem;
+}
+
+.card h2{
+    color: #000;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.card p{
+    text-align: left;
+    width: 100%;
+    margin: 12px 0;
+    color: #000;
+}
+
+.card:hover h2{
+    color: rgb(239, 78, 105);
+}
+
+.card:hover{
+    background-color: transparent;
+    transform: translateY(-8px);
+    border-color: rgb(239, 78, 105);
+}
+
+.card:hover i{
+    color: rgb(239, 78, 105);
+    cursor: pointer;
+}
+
+@media screen and (max-width:1200px) {
+    .cards{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media screen and (max-width:900px) {
+    .cards{
+    grid-template-columns: repeat(1,1fr);
+    }
+
+    h1{
+        font-size: 3.5rem;
+    }
+}   
+
+header.sticky{
+    background: #fff;
+    padding: 20px 10%;
+    box-shadow: 0px 0px 10px rgb(0, 0, 0 / 10%); 
+}
+
+@media(max-width:890px){
+    header{
+        padding: 20px 3%;
+        transition: .4s;
+    }
+}
+@media(max-width:630px){
+    .main-text h1{
+        font-size: 50px;
+        transition: .4s;
+    }
+    .main-text p{
+        font-size: 18px;
+        transition: .4s;
+    }
+    .main-btn{
+        padding: 10px 20px;
+        transition: .4s;
+    }
+}
+
+@media(max-width:750px){
+    .navmenu{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 300px;
+        height: 130vh;
+        background: #1c2335;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 120px 30px;
+        transition: all .42s; 
+        border-radius: 10px;
+    }
+
+    .navmenu a{
+        display: block;
+        margin: 18px 0;
+    }
+
+    .navmenu.open{
+        right: 0;
+    }
+}
